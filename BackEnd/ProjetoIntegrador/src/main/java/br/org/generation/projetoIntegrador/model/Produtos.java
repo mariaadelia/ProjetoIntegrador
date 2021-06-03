@@ -27,7 +27,7 @@ public class Produtos {
 	private String descricao;
 	@Size(max = 1250)
 	private String midias;
-	private int like;
+	private int curtir;
 	private int dislike;
 
 	public long getId() {
@@ -78,12 +78,12 @@ public class Produtos {
 		this.midias = midias;
 	}
 
-	public int getLike() {
-		return like;
+	public int getCurtir() {
+		return curtir;
 	}
 
-	public void setLike(int like) {
-		this.like = like;
+	public void setCurtir(int curtir) {
+		this.curtir = curtir;
 	}
 
 	public int getDislike() {
