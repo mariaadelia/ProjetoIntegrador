@@ -30,12 +30,9 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure (HttpSecurity http) throws Exception{
 		http.authorizeRequests()
-		/*.antMatchers("/usuario/carrinho").authenticated()
-		.anyRequest().permitAll()
-		Como fazer para liberar todas as páginas para o usuário, MENOS a pg do carrinho?*/
 		.antMatchers("/usuario/logar").permitAll()
 		.antMatchers("/usuario/cadastrar").permitAll()
-		.antMatchers("/usuario/atualizar").permitAll()
+		.antMatchers("/").permitAll() //Para que a home seja visível para todes(sem ser necessário estar logado)
 		.anyRequest().authenticated()
 		.and().httpBasic()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

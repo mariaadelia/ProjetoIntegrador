@@ -40,8 +40,8 @@ public class UsuarioService {
 	
 	//Atualizar cadastro
 	public Optional<Usuario> atualizarUsuario (Usuario email){
-		if(repository.findByEmail(email.getEmail()).isPresent())
-			return null;
+		/*if(repository.findByEmail(email.getEmail()).isPresent())
+			return null; trocar*/
 		
 		//Encriptar o password
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -57,12 +57,13 @@ public class UsuarioService {
 		Optional<Usuario> usuario = repository.findByEmail(user.get().getEmail());
 		
 		if(usuario.isPresent()) {
+			
 			if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {//Para checar se é a mesma senhada cadastrada
+				
 				String auth = user.get().getEmail() + ":" + user.get().getSenha();
-				
 				byte[] encodeAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII"))); //Criptografia da senha
+				String authHeader = "Basic " + new String(encodeAuth); //Token
 				
-				String authHeader = "RedeAntonias " + new String(encodeAuth); //Token
 				user.get().setToken(authHeader);
 				user.get().setNome(usuario.get().getNome());
 				user.get().setSenha(usuario.get().getSenha());
