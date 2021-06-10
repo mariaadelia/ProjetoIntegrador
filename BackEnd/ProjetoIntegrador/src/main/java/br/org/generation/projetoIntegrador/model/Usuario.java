@@ -1,5 +1,6 @@
 package br.org.generation.projetoIntegrador.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -41,6 +42,9 @@ public class Usuario {
 	@Column(nullable = false, columnDefinition = "boolean default false")
 	@NotNull(message = "Este campo não pode ser nulo") //como colocar o default (através da column)
 	private boolean vendedor;
+	
+	@NotNull(message = "Este campo não pode ser vazio!")
+	private LocalDate dataAniversario;
 	
 	//Relacionamento
 	
@@ -86,6 +90,14 @@ public class Usuario {
 
 	public void setVendedor(boolean vendedor) {
 		this.vendedor = vendedor;
+	}
+
+	public LocalDate getDataAniversario() {
+		return dataAniversario;
+	}
+
+	public void setDataAniversario(LocalDate dataAniversario) {
+		this.dataAniversario = dataAniversario;
 	}
 
 	public List<ProdutosServicos> getProdutosServicos() {
