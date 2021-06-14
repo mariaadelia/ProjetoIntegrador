@@ -15,7 +15,7 @@ public class ProjetoIntegradorApplication {
 	@GetMapping
 	public ModelAndView swaggwerUi() {
 		
-		return new ModelAndView("redirect:/swagger-ui ");
+		return new ModelAndView("redirect:/swagger-ui/");
 	
 	}
 
