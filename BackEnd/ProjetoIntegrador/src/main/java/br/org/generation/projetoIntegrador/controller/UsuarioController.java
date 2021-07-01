@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -61,6 +62,12 @@ public class UsuarioController {
 		}catch(Exception e) {
 			return ResponseEntity.badRequest().build();
 		}
+	}
+	
+	//Deletar Usuário
+	@DeleteMapping("/{id}")
+	public void deleteUsuario(@PathVariable long id) {
+		repository.deleteById(id);
 	}
 	
 	

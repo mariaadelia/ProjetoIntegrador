@@ -30,6 +30,8 @@ public class Usuario {
 	@Size(min = 5, max = 100, message = "Este campo precisa de no mínimo 5 e no máximo 100 caracteres!")
 	private String nome ;
 	
+	private String foto;
+	
 	@NotNull(message = "Este campo não pode ser vazio!")
 	@Email
 	@Size(max = 256, message = "Este campo precisa de no máximo 256 caracteres!")
@@ -66,6 +68,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public String getEmail() {

@@ -2,13 +2,27 @@ package br.org.generation.projetoIntegrador.model;
 
 public class UsuarioLogin {
 	
+	private long id;
+	
 	private String nome;
+	
+	private String foto;
 	
 	private  String email;
 	
 	private String senha;
 	
 	private String token;
+	
+	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -16,6 +30,14 @@ public class UsuarioLogin {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public String getEmail() {
