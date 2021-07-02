@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -32,6 +33,9 @@ public class Categoria {
 	@NotNull(message = "Este campo não pode ser vazio!")
 	@Size(min = 50, max = 1250, message = "Este campo precisa de no mínimo 50 e no máximo 1250 caracteres!")
 	private String descricao;
+	
+	@Transient
+	private int qtdCategoria;
 	
 	//Relacionamento
 	
@@ -78,6 +82,15 @@ public class Categoria {
 	public void setServicos(List<ProdutosServicos> servicos) {
 		this.servicos = servicos;
 	}
+
+	public int getQtdCategoria() {
+		return qtdCategoria;
+	}
+
+	public void setQtdCategoria(int qtdCategoria) {
+		this.qtdCategoria = qtdCategoria;
+	}
+	
 	
 	//
 	

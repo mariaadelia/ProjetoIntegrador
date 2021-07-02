@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.org.generation.projetoIntegrador.model.Categoria;
 import br.org.generation.projetoIntegrador.repository.CategoriaRepository;
+import br.org.generation.projetoIntegrador.service.CategoriaService;
 
 @RestController
 @RequestMapping("/categoria")
@@ -25,6 +26,9 @@ public class CategoriaController {
 
 	@Autowired
 	private CategoriaRepository repository;
+	
+	@Autowired
+	private CategoriaService categoriaService;
 
 	@GetMapping // FindAll
 	public ResponseEntity<List<Categoria>> GetAll() {
@@ -59,5 +63,11 @@ public class CategoriaController {
 	@DeleteMapping("/{id}") // Deletando Categoria
 	public void deleteCategoria(@PathVariable long id) {
 		repository.deleteById(id);
+	}
+	
+	//Categoria TT
+	@GetMapping("/trendtopics")
+	public ResponseEntity<List<Categoria>> getTrendTopics(){
+		return ResponseEntity.ok(categoriaService.trendTopics());
 	}
 }
