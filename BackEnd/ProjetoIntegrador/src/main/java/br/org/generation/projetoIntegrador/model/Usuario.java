@@ -15,7 +15,10 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.lang.Nullable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 
 @Entity
@@ -30,6 +33,7 @@ public class Usuario {
 	@Size(min = 5, max = 100, message = "Este campo precisa de no mínimo 5 e no máximo 100 caracteres!")
 	private String nome ;
 	
+	@Nullable
 	private String foto;
 	
 	@NotNull(message = "Este campo não pode ser vazio!")
