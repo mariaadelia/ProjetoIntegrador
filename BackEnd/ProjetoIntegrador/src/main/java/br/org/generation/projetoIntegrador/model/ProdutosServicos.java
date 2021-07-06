@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.lang.Nullable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -18,18 +20,28 @@ public class ProdutosServicos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
 	@NotNull
 	@Size(min = 2, max = 100) // mensagem de erro front end
 	private String nomeProdutosServicos;
+	
 	@NotNull
 	private double preco;
+	
+	@Nullable
 	private int estoqueVendedor;
+	
 	@NotNull
 	@Size(min = 50, max = 1250)
 	private String descricao;
+	
 	@Size(max = 1250)
 	private String midias;
+	
+	@Nullable
 	private int curtir;
+	
+	@Nullable
 	private int dislike;
 
 	// Relacionamento
