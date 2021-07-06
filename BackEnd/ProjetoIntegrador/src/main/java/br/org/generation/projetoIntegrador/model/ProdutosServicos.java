@@ -1,5 +1,6 @@
 package br.org.generation.projetoIntegrador.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -43,6 +44,15 @@ public class ProdutosServicos {
 	
 	@Nullable
 	private int dislike;
+	
+	
+	//Para saber se a pessoa está cadastrando produtos ou serviços
+	
+	@Column(nullable = false, columnDefinition = "boolean default false")
+	@NotNull(message = "Este campo não pode ser nulo")
+	private boolean escolhaServicosProdutos;
+	
+	//
 
 	// Relacionamento
 	@ManyToOne
@@ -115,6 +125,14 @@ public class ProdutosServicos {
 
 	public void setDislike(int dislike) {
 		this.dislike = dislike;
+	}
+
+	public boolean isEscolhaServicosProdutos() {
+		return escolhaServicosProdutos;
+	}
+
+	public void setEscolhaServicosProdutos(boolean escolhaServicosProdutos) {
+		this.escolhaServicosProdutos = escolhaServicosProdutos;
 	}
 
 	public Categoria getCategoria() {
