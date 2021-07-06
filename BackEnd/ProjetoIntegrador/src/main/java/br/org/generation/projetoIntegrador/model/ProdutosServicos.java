@@ -36,6 +36,7 @@ public class ProdutosServicos {
 	@Size(min = 50, max = 1250)
 	private String descricao;
 	
+	@Nullable
 	@Size(max = 1250)
 	private String midias;
 	
