@@ -38,6 +38,12 @@ public class UsuarioController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
+	//Find By Id
+	@GetMapping("/{id}")
+	public ResponseEntity<Usuario> getById(@PathVariable long id){
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+	}
+	
 	
 	//Find All By Nome
 	@GetMapping("/nome/{nome}")

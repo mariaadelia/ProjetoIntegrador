@@ -31,22 +31,22 @@ public class CategoriaController {
 	private CategoriaService categoriaService;
 
 	@GetMapping // FindAll
-	public ResponseEntity<List<Categoria>> GetAll() {
+	public ResponseEntity<List<Categoria>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
 	@GetMapping("/{id}") // findById
-	public ResponseEntity<Categoria> GetById(@PathVariable long id) {
+	public ResponseEntity<Categoria> getById(@PathVariable long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/produto/{produto}") // Pesquisa pelo nome produto e ou serviço
-	public ResponseEntity<List<Categoria>> GetByProduto(@PathVariable String produto) {
+	public ResponseEntity<List<Categoria>> getByProduto(@PathVariable String produto) {
 		return ResponseEntity.ok(repository.findAllByProdutoServicosContainingIgnoreCase(produto));
 	}
 
 	@GetMapping("/chave/{chave}") // Pesquisa pela palavra-chave
-	public ResponseEntity<List<Categoria>> GetByPalavra(@PathVariable String chave) {
+	public ResponseEntity<List<Categoria>> getByPalavra(@PathVariable String chave) {
 		return ResponseEntity.ok(repository.findAllByPalavraChaveContainingIgnoreCase(chave));
 	}
 
