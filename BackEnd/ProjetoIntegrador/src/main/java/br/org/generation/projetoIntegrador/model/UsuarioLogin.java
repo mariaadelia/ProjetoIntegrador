@@ -14,6 +14,8 @@ public class UsuarioLogin {
 	
 	private String token;
 	
+	//Add:private boolean vendedor;
+	
 	
 
 	public long getId() {

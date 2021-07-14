@@ -46,7 +46,7 @@ public class Usuario {
 	private String senha;
 	
 	@Column(nullable = false, columnDefinition = "boolean default false")
-	@NotNull(message = "Este campo não pode ser nulo") //como colocar o default (através da column)
+	@NotNull(message = "Este campo não pode ser nulo") //mudar para string
 	private boolean vendedor;
 	
 	@NotNull(message = "Este campo não pode ser vazio!")
