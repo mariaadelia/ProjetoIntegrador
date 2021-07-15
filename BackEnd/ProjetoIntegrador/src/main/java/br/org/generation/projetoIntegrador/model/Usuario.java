@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -45,9 +44,8 @@ public class Usuario {
 	@Size(min = 8, max = 60, message = "Este campo precisa de no mínimo 8 e no máximo 60 caracteres!")
 	private String senha;
 	
-	@Column(nullable = false, columnDefinition = "boolean default false")
-	@NotNull(message = "Este campo não pode ser nulo") //mudar para string
-	private boolean vendedor;
+	@NotNull(message = "Este campo não pode ser nulo")
+	private String vendedor;
 	
 	@NotNull(message = "Este campo não pode ser vazio!")
 	private LocalDate dataAniversario;
@@ -97,12 +95,12 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-	public boolean isVendedor() {
+	
+	public String getVendedor() {
 		return vendedor;
 	}
 
-	public void setVendedor(boolean vendedor) {
+	public void setVendedor(String vendedor) {
 		this.vendedor = vendedor;
 	}
 

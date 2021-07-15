@@ -14,7 +14,7 @@ public class UsuarioLogin {
 	
 	private String token;
 	
-	//Add:private boolean vendedor;
+	private String vendedor;
 	
 	
 
@@ -65,7 +65,14 @@ public class UsuarioLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	
+
+	public String getVendedor() {
+		return vendedor;
+	}
+
+	public void setVendedor(String vendedor) {
+		this.vendedor = vendedor;
+	}
 	
 
 }

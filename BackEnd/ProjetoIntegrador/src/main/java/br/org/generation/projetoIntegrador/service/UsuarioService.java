@@ -70,6 +70,7 @@ public class UsuarioService {
 				user.get().setId(usuario.get().getId());
 				user.get().setFoto(usuario.get().getFoto());
 				user.get().setEmail(usuario.get().getEmail());
+				user.get().setVendedor(usuario.get().getVendedor());
 				
 				return user;
 			}
