@@ -27,6 +27,10 @@ public class Categoria {
 	@Size(min = 2, max = 100)
 	private String produtoServicos;
 	
+	@NotNull(message = "Este campo não pode ser vazio!")
+	@Size(min = 2, max = 100)
+	private String categoria;
+	
 	@Size(min = 2, max = 100)
 	private String palavraChave;
 	
@@ -57,6 +61,14 @@ public class Categoria {
 
 	public void setProdutoServicos(String produtoServicos) {
 		this.produtoServicos = produtoServicos;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 	public String getPalavraChave() {
